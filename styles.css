@@ -10,7 +10,7 @@
   }
   
   html {
-    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
     scroll-padding-top: 48px;
   }
 
@@ -121,11 +121,6 @@
   align-items: flex-end;
 }
 
-.contact-info-block-right .contact-info-item {
-  justify-content: flex-end;
-  text-align: right;
-}
-
 .contact-info-item {
   color: var(--secondary-text-color);
   text-decoration: none;
@@ -133,6 +128,11 @@
   align-items: flex-start;
   justify-content: flex-start;
   gap: 10px;
+}
+
+.contact-info-block-right .contact-info-item {
+  justify-content: flex-end;
+  text-align: right;
 }
 
 .contact-info-item:not(:last-child) {
@@ -239,7 +239,7 @@
   flex-wrap: wrap;
   padding: 10px 0;
   margin-bottom: 8px;
-  background: rgba(255, 255, 255, 0.92);
+  background: rgb(255 255 255 / 92%);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--border-color);
 }
@@ -538,12 +538,13 @@
 
 body.trekking-mode {
   line-height: 1.62;
-  --border-color: rgba(76, 130, 90, 0.38);
+
+  --border-color: rgb(76 130 90 / 38%);
 }
 
 body.trekking-mode .resume {
-  border-color: rgba(76, 130, 90, 0.12);
-  box-shadow: 1px 1px 7px 7px rgba(76, 130, 90, 0.06);
+  border-color: rgb(76 130 90 / 12%);
+  box-shadow: 1px 1px 7px 7px rgb(76 130 90 / 6%);
 }
 
 body.trekking-mode .timeline-list::before {
@@ -562,7 +563,7 @@ body.trekking-mode .timeline-details {
 }
 
 /* Tablet: stack experience + education; avatar on top, contacts in two columns */
-@media screen and (max-width: 900px) {
+@media screen and (width <= 900px) {
   .main-info {
     flex-direction: column;
     gap: 36px;
@@ -601,14 +602,14 @@ body.trekking-mode .timeline-details {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (width <= 768px) {
   .container {
     padding: 0 20px;
   }
 }
 
 /* Mobile */
-@media screen and (max-width: 576px) {
+@media screen and (width <= 576px) {
   .resume {
     margin: 16px auto;
     padding: 20px 0;
@@ -653,8 +654,8 @@ body.trekking-mode .timeline-details {
     margin-bottom: 4px;
   }
 
-  .contact-info-block-right .contact-info-item,
-  .contact-info-item {
+  .contact-info-item,
+  .contact-info-block-right .contact-info-item {
     justify-content: center;
     text-align: center;
     max-width: 100%;
@@ -753,7 +754,7 @@ body.trekking-mode .timeline-details {
 }
 
 /* Very small phones */
-@media screen and (max-width: 380px) {
+@media screen and (width <= 380px) {
   .container {
     padding: 0 12px;
   }
@@ -780,6 +781,7 @@ body.trekking-mode .timeline-details {
 
   body.trekking-mode {
     --border-color: #ccc;
+
     line-height: 1.45;
   }
 
