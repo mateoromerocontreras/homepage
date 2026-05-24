@@ -338,6 +338,137 @@
   margin-bottom: 0;
 }
 
+/* timeline (experience) */
+.timeline__list {
+  list-style: none;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+
+.timeline__list::before {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: 10px;
+  bottom: 10px;
+  width: 2px;
+  background: var(--border-color);
+}
+
+.timeline__item {
+  position: relative;
+  padding: 0 0 28px 36px;
+}
+
+.timeline__item:last-child {
+  padding-bottom: 0;
+}
+
+.timeline__item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--text-decoration-color);
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px var(--border-color);
+}
+
+.timeline__date {
+  display: block;
+  color: var(--durability-text-color);
+  font-size: 0.9rem;
+  margin-bottom: 4px;
+}
+
+.timeline__title {
+  color: var(--primary-text-color);
+  font-size: 1.05rem;
+  font-weight: bold;
+  line-height: 1.35;
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+
+.timeline__role {
+  color: var(--durability-text-color);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.timeline__details {
+  color: var(--secondary-text-color);
+  padding-left: 20px;
+  line-height: 1.55;
+}
+
+.timeline__details li {
+  margin-bottom: 6px;
+}
+
+.timeline__details li:last-child {
+  margin-bottom: 0;
+}
+
+/* certifications */
+.certifications {
+  margin-bottom: 0;
+}
+
+.certifications__header {
+  color: var(--secondary-text-color);
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.certifications__item {
+  margin-bottom: 22px;
+}
+
+.certifications__item:last-child {
+  margin-bottom: 0;
+}
+
+.certifications__date {
+  color: var(--durability-text-color);
+  font-size: 15px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.certifications__title {
+  color: var(--primary-text-color);
+  font-size: 1rem;
+  line-height: 1.35;
+  margin-bottom: 6px;
+  overflow-wrap: anywhere;
+}
+
+.certifications__issuer {
+  color: var(--secondary-text-color);
+}
+
+/* about me */
+.about-me__header {
+  color: var(--secondary-text-color);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.about-me__text {
+  color: var(--secondary-text-color);
+  text-align: left;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+.about-me__text:last-child {
+  margin-bottom: 0;
+}
+
 /* Tablet: stack experience + education; avatar on top, contacts in two columns */
 @media screen and (max-width: 900px) {
   .main-info {
@@ -481,8 +612,29 @@
 
   .additional-info__education-header,
   .additional-info__languages-header,
-  .experiences__header {
+  .certifications__header,
+  .experiences__header,
+  .about-me__header {
     text-align: center;
+  }
+
+  .certifications__date,
+  .certifications__title,
+  .certifications__issuer {
+    text-align: center;
+  }
+
+  .timeline__item {
+    padding-left: 30px;
+  }
+
+  .timeline__title,
+  .timeline__role {
+    text-align: left;
+  }
+
+  .timeline__details {
+    padding-left: 18px;
   }
 
   .experiences__company-header-durability,
