@@ -469,6 +469,52 @@
   margin-bottom: 0;
 }
 
+.trekking-toggle {
+  display: inline;
+  margin: 0;
+  padding: 0 0 0 2px;
+  border: none;
+  background: none;
+  font: inherit;
+  color: inherit;
+  line-height: inherit;
+  vertical-align: baseline;
+  cursor: pointer;
+  opacity: 0.08;
+  transition: opacity 0.2s ease;
+}
+
+.trekking-toggle:hover,
+.trekking-toggle:focus-visible {
+  opacity: 0.45;
+  outline: none;
+}
+
+body.trekking-mode {
+  line-height: 1.62;
+  --border-color: rgba(76, 130, 90, 0.38);
+}
+
+body.trekking-mode .resume {
+  border-color: rgba(76, 130, 90, 0.12);
+  box-shadow: 1px 1px 7px 7px rgba(76, 130, 90, 0.06);
+}
+
+body.trekking-mode .timeline__list::before {
+  background: var(--border-color);
+}
+
+body.trekking-mode .timeline__item::before {
+  box-shadow: 0 0 0 3px #fff, 0 0 0 4px var(--border-color);
+}
+
+body.trekking-mode .about-me__text,
+body.trekking-mode .intro_text,
+body.trekking-mode .skills__text,
+body.trekking-mode .timeline__details {
+  line-height: 1.72;
+}
+
 /* Tablet: stack experience + education; avatar on top, contacts in two columns */
 @media screen and (max-width: 900px) {
   .main-info {
