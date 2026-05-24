@@ -1,5 +1,6 @@
 (function () {
   const trekToggle = document.querySelector(".trekking-toggle");
+  const TREK_KEY = "resume-trekking-mode";
 
   console.log(
     "%c👋 Hey, fellow explorer!",
@@ -34,10 +35,17 @@
 
   if (!trekToggle) return;
 
+  if (localStorage.getItem(TREK_KEY) === "true") {
+    document.body.classList.add("trekking-mode");
+    trekToggle.setAttribute("aria-pressed", "true");
+    trekToggle.title = "Trekking mode on";
+  }
+
   trekToggle.addEventListener("click", function () {
     var on = document.body.classList.toggle("trekking-mode");
     trekToggle.setAttribute("aria-pressed", on ? "true" : "false");
     trekToggle.title = on ? "Trekking mode on" : "Toggle trekking mode";
+    localStorage.setItem(TREK_KEY, on ? "true" : "false");
   });
 
   trekToggle.addEventListener("keydown", function (e) {
