@@ -11,6 +11,7 @@
   
   html {
     -webkit-text-size-adjust: 100%;
+    scroll-padding-top: 48px;
   }
 
   body {
@@ -207,11 +208,56 @@
     text-align: center;
     margin-bottom: 15px;
   }
-  
-  .skills__text {
-    color: var(--secondary-text-color);
-    text-align: justify;
+
+  .skills__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
+
+  .skills__chip {
+    color: var(--secondary-text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    padding: 4px 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+/* section nav */
+.section-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 8px 20px;
+  flex-wrap: wrap;
+  padding: 10px 0;
+  margin-bottom: 8px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.section-nav__link {
+  color: var(--secondary-text-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 4px 2px;
+}
+
+.section-nav__link:hover,
+.section-nav__link:focus-visible {
+  color: var(--primary-text-color);
+  text-decoration-color: var(--text-decoration-color);
+  text-decoration-line: underline;
+  outline: none;
+}
 
 /* experience and additional info styles */
 .main-info {
@@ -510,7 +556,7 @@ body.trekking-mode .timeline__item::before {
 
 body.trekking-mode .about-me__text,
 body.trekking-mode .intro_text,
-body.trekking-mode .skills__text,
+body.trekking-mode .skills__chip,
 body.trekking-mode .timeline__details {
   line-height: 1.72;
 }
@@ -630,9 +676,13 @@ body.trekking-mode .timeline__details {
     text-align: center;
   }
 
-  .intro_text,
-  .skills__text {
+  .intro_text {
     text-align: left;
+  }
+
+  .section-nav {
+    gap: 6px 14px;
+    padding: 8px 0;
   }
 
   .experiences__company-project {
@@ -714,5 +764,73 @@ body.trekking-mode .timeline__details {
 
   .contact-info__sub-header {
     font-size: 0.9rem;
+  }
+}
+
+@media print {
+  .section-nav,
+  .trekking-toggle {
+    display: none !important;
+  }
+
+  body {
+    color: #000;
+    line-height: 1.45;
+  }
+
+  body.trekking-mode {
+    --border-color: #ccc;
+    line-height: 1.45;
+  }
+
+  .resume {
+    margin: 0;
+    max-width: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .resume__block {
+    border-bottom-color: #ccc;
+    break-inside: avoid;
+  }
+
+  .contact-info__header,
+  .timeline__title,
+  .additional-info__education-university-speciality,
+  .certifications__title {
+    color: #000;
+  }
+
+  .contact-info__sub-header,
+  .intro_text,
+  .skills__chip,
+  .timeline__details,
+  .timeline__role,
+  .about-me__text,
+  .additional-info__education-university-name,
+  .certifications__issuer,
+  .additional-info__languages-item {
+    color: #333;
+  }
+
+  .skills__chip {
+    border-color: #ccc;
+    background: none;
+  }
+
+  .timeline__item,
+  .certifications__item {
+    break-inside: avoid;
+  }
+
+  .contact-info__avatar {
+    border-color: #999;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
   }
 }

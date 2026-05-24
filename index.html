@@ -120,21 +120,45 @@
             </div>
           </div>
 
+          <nav class="section-nav" aria-label="Page sections">
+            <a class="section-nav__link" href="#skills">Skills</a>
+            <a class="section-nav__link" href="#experience">Experience</a>
+            <a class="section-nav__link" href="#education">Education</a>
+            <a class="section-nav__link" href="#about">About</a>
+          </nav>
+
           <div class="resume__block">
-            <div class="skills">
-              <h3 class="skills__header">Skills</h3>
-              <p class="skills__text">
-                Java, Python, SQL (PostgreSQL/SQL Server), PL/SQL, Spring Boot, Django, RESTful APIs, Maven,
-                Postman, AWS (ECS/EKS), Docker, CI/CD, Google Cloud, Functional Testing, ISTQB, Jira/Scrum,
-                LLM integration (Gemini/OpenAI). Team leadership, assertive communication, cross-regional
-                coordination, continuous learning.
-              </p>
-            </div>
+            <section class="skills" id="skills" aria-labelledby="skills-heading">
+              <h3 class="skills__header" id="skills-heading">Skills</h3>
+              <ul class="skills__list" role="list">
+                <li class="skills__chip">Java</li>
+                <li class="skills__chip">Python</li>
+                <li class="skills__chip">SQL (PostgreSQL/SQL Server)</li>
+                <li class="skills__chip">PL/SQL</li>
+                <li class="skills__chip">Spring Boot</li>
+                <li class="skills__chip">Django</li>
+                <li class="skills__chip">RESTful APIs</li>
+                <li class="skills__chip">Maven</li>
+                <li class="skills__chip">Postman</li>
+                <li class="skills__chip">AWS (ECS/EKS)</li>
+                <li class="skills__chip">Docker</li>
+                <li class="skills__chip">CI/CD</li>
+                <li class="skills__chip">Google Cloud</li>
+                <li class="skills__chip">Functional Testing</li>
+                <li class="skills__chip">ISTQB</li>
+                <li class="skills__chip">Jira/Scrum</li>
+                <li class="skills__chip">LLM integration (Gemini/OpenAI)</li>
+                <li class="skills__chip">Team leadership</li>
+                <li class="skills__chip">Assertive communication</li>
+                <li class="skills__chip">Cross-regional coordination</li>
+                <li class="skills__chip">Continuous learning</li>
+              </ul>
+            </section>
           </div>
 
           <div class="resume__block">
             <div class="main-info fh">
-              <div class="experiences">
+              <div class="experiences" id="experience">
                 <h3 class="experiences__header">Experience</h3>
                 <ol class="timeline__list">
                   <li class="timeline__item">
@@ -207,7 +231,7 @@
               </div>
 
               <div class="additional-info fv">
-                <div class="additional-info__education">
+                <div class="additional-info__education" id="education">
                   <h3 class="additional-info__education-header">Education</h3>
                   <div class="additional-info__education-university">
                     <span class="additional-info__education-university-durability">2018 – Present</span>
@@ -243,7 +267,7 @@
           </div>
 
           <div class="resume__block">
-            <section class="about-me" aria-labelledby="about-me-heading">
+            <section class="about-me" id="about" aria-labelledby="about-me-heading">
               <h3 class="about-me__header" id="about-me-heading">
                 About Me<button
                   type="button"
