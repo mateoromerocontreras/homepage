@@ -53,17 +53,32 @@
     .contact_info_container {
       flex-direction: column;
     }
-  
+
     .contact_info_container {
       align-items: center;
     }
-  
+
+    .contact-info__block--left,
+    .contact-info__block--right {
+      align-items: center;
+      width: 100%;
+    }
+
+    .contact-info__block--right .contact-info__item {
+      justify-content: center;
+      text-align: center;
+    }
+
     .contact-info__block:not(:last-child) {
       margin-bottom: 20px;
     }
-  
+
     .experiences {
       margin-right: 0;
+    }
+
+    .main-info {
+      gap: 30px;
     }
   }
 
@@ -85,25 +100,58 @@
   margin-bottom: 30px;
 }
 
+.contact_info_container {
+  align-items: flex-start;
+  justify-content: center;
+  gap: 16px 32px;
+  margin-bottom: 25px;
+}
+
 .contact-info__block {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  flex: 1 1 0;
+  min-width: 0;
+  justify-content: flex-start;
+  gap: 14px;
 }
 
 .contact-info__block--center {
-  justify-content: center;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 4px;
+}
+
+.contact-info__block--left {
+  align-items: flex-start;
+}
+
+.contact-info__block--right {
+  align-items: flex-end;
+}
+
+.contact-info__block--right .contact-info__item {
+  justify-content: flex-end;
+  text-align: right;
 }
 
 .contact-info__item {
   color: var(--secondary-text-color);
   text-decoration: none;
   display: flex;
-  justify-content: start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 10px;
 }
 
 .contact-info__item:not(:last-child) {
-  margin-bottom: 20px;
+  margin-bottom: 0;
+}
+
+.contact-info__item span {
+  line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .contact-info__item-icon-wrapper {
@@ -124,8 +172,8 @@
 
 .contact-info__avatar {
   border-radius: 50%;
-  width: 100px;
-  height: 100px;
+  width: 120px;
+  height: 120px;
   object-fit: cover;
   border: 3px solid;
   border-color: var(--text-decoration-color);
@@ -133,16 +181,22 @@
 
 /* intro and skills styles */
 .intro {
-    display: flex;
-    justify-content: start;
-  }
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 5px;
+  max-width: 100%;
+}
   
-  .intro__icon-wrapper {
-    margin-right: 30px;
-    width: 30px;
-    display: flex;
-    justify-content: center;
-  }
+.intro__icon-wrapper {
+  flex-shrink: 0;
+  margin-right: 0;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  padding-top: 2px;
+}
   
   .intro__icon {
     height: 1.1428rem;
@@ -169,11 +223,17 @@
     text-align: justify;
   }
 
-  /* experience and additional info styles */
-  .experiences {
-    flex: 1 1 60%;
-    margin-right: 50px;
-  }
+/* experience and additional info styles */
+.main-info {
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.experiences {
+  flex: 1 1 60%;
+  margin-right: 0;
+  min-width: 0;
+}
   
   .experiences__header {
     color: var(--secondary-text-color);
@@ -219,13 +279,24 @@
     padding-left: 20px;
   }
   
-  .additional-info {
-    flex: 1 1 40%;
-  }
-  
-  .additional-info__education {
-    margin-bottom: 20px;
-  }
+.additional-info {
+  flex: 1 1 40%;
+  min-width: 0;
+  justify-content: flex-start;
+  gap: 28px;
+}
+
+.additional-info__education {
+  margin-bottom: 0;
+}
+
+.additional-info__education-university {
+  margin-bottom: 22px;
+}
+
+.additional-info__education-university:last-of-type {
+  margin-bottom: 0;
+}
   
   .additional-info__education-header {
     color: var(--secondary-text-color);
@@ -260,6 +331,19 @@
     margin-bottom: 20px;
   }
   
-  .additional-info__languages-item {
-    color: var(--secondary-text-color);
-  }
+.additional-info__languages-item {
+  color: var(--secondary-text-color);
+  margin-bottom: 8px;
+}
+
+.additional-info__languages-item:last-child {
+  margin-bottom: 0;
+}
+
+.experiences__company {
+  margin-bottom: 8px;
+}
+
+.experiences__company:last-child {
+  margin-bottom: 0;
+}
